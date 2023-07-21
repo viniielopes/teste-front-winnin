@@ -1,3 +1,4 @@
+import TanStackProvider from "@/api/tanstack-query";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
@@ -17,12 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-screen bg-primary flex justify-center">
-          <h1 className="text-4xl font-bold py-6 text-white">
+        <div className="flex w-screen justify-center bg-primary">
+          <h1 className="py-6 text-4xl font-bold text-white">
             REACT<span className="text-feedback-warning">JS</span>
           </h1>
         </div>
-        {children}
+        <TanStackProvider>{children}</TanStackProvider>
       </body>
     </html>
   );
