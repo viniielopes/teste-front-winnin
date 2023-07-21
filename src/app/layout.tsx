@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex w-screen justify-center bg-primary">
+        <div className="flex w-full justify-center bg-primary">
           <h1 className="py-6 text-4xl font-bold text-white">
             REACT<span className="text-feedback-warning">JS</span>
           </h1>
