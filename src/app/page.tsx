@@ -1,14 +1,17 @@
+import { Button } from "@/components/Button";
+import { Post } from "@/components/Post";
 import { TabBar } from "@/components/TabBar";
 
 export default function Home() {
   return (
     <main>
-      <div className="w-screen bg-primary flex justify-center">
-        <h1 className="text-4xl font-bold py-6 text-white">
-          REACT<span className="text-feedback-warning">JS</span>
-        </h1>
+      <div className="mx-14">
+        <TabBar />
+        <hr className="mt-5 border-gray" />
+        <Post />
+        <hr className="mt-5 border-gray" />
+        <Button width="full">+ Ver Mais</Button>
       </div>
-      <TabBar />
     </main>
   );
 }
