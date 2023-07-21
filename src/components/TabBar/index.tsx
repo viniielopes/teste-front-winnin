@@ -1,25 +1,27 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "../Button";
-
-export type ActiveTab = "Hot" | "News" | "Rising";
+import { Topics } from "@/stores/useActiveTopic/types";
+import { useActiveTopicStore } from "@/stores/useActiveTopic";
 
 export const TabBar = () => {
-  const [active, setActive] = useState<ActiveTab>("Hot");
+  const buttonsText: Topics[] = ["Hot", "News", "Rising"];
 
-  const buttonsText: ActiveTab[] = ["Hot", "News", "Rising"];
+  const [topic, setActive] = useActiveTopicStore((state) => [
+    state.topic,
+    state.setTopic,
+  ]);
 
-  const onClickButton = (text: ActiveTab) => {
+  const onClickButton = (text: Topics) => {
     setActive(text);
   };
 
   return (
-    <div className="mt-5 flex justify-center">
+    <div className="my-5 flex justify-center">
       {buttonsText.map((text) => (
         <Button
           key={text}
-          active={active === text}
+          active={topic === text}
           onClick={() => onClickButton(text)}
         >
           {text}
