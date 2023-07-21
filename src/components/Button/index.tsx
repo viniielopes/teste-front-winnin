@@ -17,7 +17,7 @@ export const Button = ({
 
   return (
     <button
-      className={`${bg} ${btnWidth} hover:bg-active-primary active:bg-active-primary last:mr-0 mr-4 rounded-lg text-xl leading-6 py-3 w-48 text-white font-semibold`}
+      className={`${bg} ${btnWidth} mr-4 w-48 rounded-lg py-3 text-xl font-semibold leading-6 text-white last:mr-0 hover:bg-active-primary active:bg-active-primary`}
       onClick={onClick}
     >
       {children}

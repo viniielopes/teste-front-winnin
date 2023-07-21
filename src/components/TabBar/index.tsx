@@ -15,7 +15,7 @@ export const TabBar = () => {
   };
 
   return (
-    <div className="flex justify-center mt-5">
+    <div className="mt-5 flex justify-center">
       {buttonsText.map((text) => (
         <Button
           key={text}
