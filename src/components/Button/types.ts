@@ -1,8 +1,13 @@
-export type ButtonWidthType = "normal" | "full";
+import { ReactNode } from "react";
+
+type WidthType = "normal" | "full";
+export type ButtonWidthSize = {
+  [key in WidthType]: string;
+};
 
 export type ButtonProps = {
   active?: boolean;
-  children: string;
-  onClick?(text: string): void;
-  width?: ButtonWidthType;
+  children: ReactNode;
+  onClick?(): void;
+  width?: WidthType;
 };
