@@ -13,6 +13,9 @@ module.exports = {
       "feedback-warning": "#ffb800",
       black: "#000000",
       white: "#ffffff",
+      active: {
+        primary: "#583d82",
+      },
     },
     extend: {
       backgroundImage: {
