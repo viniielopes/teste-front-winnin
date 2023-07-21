@@ -1,21 +1,31 @@
-import { useInfiniteQuery } from "@tanstack/react-query";
+import {
+  UseInfiniteQueryOptions,
+  useInfiniteQuery,
+} from "@tanstack/react-query";
 import { redditInstance } from "@/api/axios";
 import { GetSubredditInfoParams, GetSubredditInfoResponse } from "./types";
 import { AxiosResponse } from "axios";
 
 const prefix = "reddit";
 
-export const useGetSubredditInfo = ({ type }: GetSubredditInfoParams) => {
-  return useInfiniteQuery(
+export const useGetSubredditInfo = (
+  { type }: GetSubredditInfoParams,
+  options?: UseInfiniteQueryOptions<GetSubredditInfoResponse, unknown>,
+) => {
+  return useInfiniteQuery<GetSubredditInfoResponse, unknown>(
     [prefix, type],
-    (teste) =>
+    ({ pageParam }) =>
       redditInstance
         .get<AxiosResponse<GetSubredditInfoResponse>>(
           `/r/reactjs/${type}.json?limit=10&raw_json=1${
-            teste.pageParam ? `&after=${teste.pageParam}` : ""
+            pageParam ? `&after=${pageParam}` : ""
           }`,
         )
         .then((data) => data.data.data),
-    { getNextPageParam: (lastPage) => lastPage.after },
+    {
+      getNextPageParam: (lastPage) => lastPage.after,
+      retry: 2,
+      ...options,
+    },
   );
 };

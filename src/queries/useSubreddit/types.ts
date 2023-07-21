@@ -1,6 +1,4 @@
 export type GetSubredditInfoParams = {
-  after?: string;
-  pageParam?: string;
   type: "hot" | "new" | "rising";
 };
 

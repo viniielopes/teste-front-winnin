@@ -13,6 +13,7 @@ module.exports = {
       "feedback-warning": "#ffb800",
       black: "#000000",
       white: "#ffffff",
+      error: "#ED4337",
       active: {
         primary: "#583d82",
       },

@@ -7,21 +7,43 @@ import Divider from "@/components/Divider";
 import PostComponents from "@/components/Post/components";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { LoadingPost } from "../LoadingPost";
+import { toast } from "react-toastify";
 
 export const Post = () => {
   const topicType = useActiveTopicStore((state) => state.topicType);
 
-  const { data, isLoading, isError, fetchNextPage } = useGetSubredditInfo({
-    type: topicType,
-    pageParam: undefined,
-  });
+  const { data, isLoading, isError, fetchNextPage } = useGetSubredditInfo(
+    {
+      type: topicType,
+    },
+    {
+      onError: () => {
+        toast.error("Aconteceu um erro!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      },
+    },
+  );
 
   if (isLoading) {
     return <LoadingPost size={10} />;
   }
 
-  if (true) {
-    return <h1>rolou um erro</h1>;
+  if (!data && isError) {
+    return (
+      <div className="flex justify-center">
+        <h1 className="text-xl font-bold text-error">
+          Aconteceu um erro, tente novamente em alguns minutos...
+        </h1>
+      </div>
+    );
   }
 
   return (
