@@ -23,7 +23,9 @@ export const useGetSubredditInfo = (
         )
         .then((data) => data.data.data),
     {
-      getNextPageParam: (lastPage) => lastPage.after,
+      getNextPageParam: (lastPage) => {
+        return lastPage.after === null ? undefined : lastPage.after;
+      },
       retry: 2,
       ...options,
     },
