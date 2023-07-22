@@ -6,6 +6,7 @@ import PostComponents from "@/components/Post/components";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { LoadingPost } from "../LoadingPost";
 import { usePost } from "@/hooks/usePost";
+import { Fragment } from "react";
 
 export const Post = () => {
   const { data, isLoading, isError, fetchMoreData, hasNextPage } = usePost();
@@ -43,9 +44,9 @@ export const Post = () => {
         loader={<LoadingPost size={4} />}
       >
         {data.pages.map((page) => (
-          <>
+          <Fragment key={page.children[0].data.title}>
             {page.children.map((info) => (
-              <>
+              <Fragment key={info.data.created_utc}>
                 <Divider />
                 <PostComponents.Root>
                   {info.data.thumbnail !== "self" &&
@@ -61,9 +62,9 @@ export const Post = () => {
                     <PostComponents.Domain domain={info.data.domain} />
                   </div>
                 </PostComponents.Root>
-              </>
+              </Fragment>
             ))}
-          </>
+          </Fragment>
         ))}
       </InfiniteScroll>
     </div>

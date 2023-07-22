@@ -4,7 +4,10 @@ import { PostSendByProps } from "./types";
 
 export const PostSendBy = ({ author, creationDate }: PostSendByProps) => {
   return (
-    <p className="text-base font-normal leading-5 text-gray-dark2">
+    <p
+      className="text-base font-normal leading-5 text-gray-dark2"
+      data-testid="sendby-test"
+    >
       enviado há{" "}
       {formatDistance(creationDate, new Date(), {
         locale: ptBR,

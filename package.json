@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch --coverage",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "coverage": "jest --coverage"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.29.25",
