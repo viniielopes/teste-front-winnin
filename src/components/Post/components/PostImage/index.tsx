@@ -9,6 +9,7 @@ export const PostImage = ({ imageURL }: PostImageProps) => {
       alt={"Post image"}
       width={77}
       height={77}
+      data-testid={"post-image"}
     />
   );
 };

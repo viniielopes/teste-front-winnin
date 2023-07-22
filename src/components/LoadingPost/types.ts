@@ -1,3 +1,3 @@
 export type LoadingPostProps = {
-  size: number;
+  size?: number;
 };

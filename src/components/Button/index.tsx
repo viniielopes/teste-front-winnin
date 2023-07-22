@@ -5,7 +5,7 @@ export const Button = ({
   active = true,
   children,
   width = "normal",
-  onClick = () => {},
+  onClick,
 }: ButtonProps) => {
   const widthSize: ButtonWidthSize = {
     normal: "w-48",
@@ -17,7 +17,7 @@ export const Button = ({
 
   return (
     <button
-      className={`${bg} ${btnWidth} mr-4 w-48 rounded-lg py-3 text-xl font-semibold leading-6 text-white last:mr-0 hover:bg-active-primary active:bg-active-primary`}
+      className={`${bg} ${btnWidth} mr-4 flex w-48 items-center justify-center rounded-lg py-3 text-xl font-semibold leading-6 text-white last:mr-0 hover:bg-active-primary active:bg-active-primary`}
       onClick={onClick}
     >
       {children}

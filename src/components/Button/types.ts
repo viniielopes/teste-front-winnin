@@ -8,6 +8,6 @@ export type ButtonWidthSize = {
 export type ButtonProps = {
   active?: boolean;
   children: ReactNode;
-  onClick?(): void;
+  onClick(): void;
   width?: WidthType;
 };

@@ -22,7 +22,7 @@ export const LoadingPost = ({ size = 1 }: LoadingPostProps) => {
       {loadings.map(({ widthSendBy, widthDomain, widthTitle }) => (
         <Fragment key={widthDomain + widthSendBy + widthTitle}>
           <Divider />
-          <div className="my-3 flex">
+          <div className="my-3 flex" data-testid="loading-test">
             <Skeleton width={77} height={77} className="mr-3" />
             <div className="w-full">
               <Skeleton count={1} width={`${widthTitle}%`} />
