@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <main>
       <ToastContainer></ToastContainer>
+      <TabBar />
       <div className="mx-14 mb-9">
-        <TabBar />
         <Post />
       </div>
     </main>

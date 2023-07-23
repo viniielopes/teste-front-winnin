@@ -10,7 +10,7 @@ export const TabBar = () => {
   const { tabActive, onClickTab } = useTabBar();
 
   return (
-    <div className="my-5 flex justify-center">
+    <div className="background-tabbar sticky top-0 z-50 flex justify-center bg-opacity-80 py-5">
       {buttonsText.map((text) => (
         <Button
           key={text}

@@ -9,32 +9,37 @@
   --feedback-warning: #ffb800;
   --black: #000000;
   --white: #ffffff;
-  /* --foreground-rgb: 0, 0, 0; */
-  /* --background-start-rgb: 214, 219, 220; */
-  /* --background-end-rgb: 255, 255, 255; */
+  --background: #ffffff;
+  --error: #ed4337;
+  --active-primary: #583d82;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: #6324c6;
-    --gray: #a7b0be;
-    --gray-dark2: #4c5667;
-    --feedback-warning: #ffb800;
-    --black: #000000;
-    --white: #ffffff;
-
-  /*   --foreground-rgb: 255, 255, 255; */
-  /*   --background-start-rgb: 0, 0, 0; */
-  /*   --background-end-rgb: 0, 0, 0; */
+[data-mode="dark"] {
+  --primary: #3a2758;
+  --gray: #3e4146;
+  --gray-dark2: #a3a19d;
+  --background: #181819;
+  --feedback-warning: #cfb678;
+  --black: #dbdbd9;
+  --white: #dbdbd9;
+  --error: #ed4337;
+  --active-primary: #583d82;
+  .background-tabbar {
+    background-color: rgba(24, 24, 25, 0.95);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+[data-mode="light"] {
+  --primary: #6324c6;
+  --gray: #a7b0be;
+  --gray-dark2: #4c5667;
+  --feedback-warning: #ffb800;
+  --black: #000000;
+  --white: #ffffff;
+  --background: #ffffff;
+  --error: #ed4337;
+  --active-primary: #583d82;
+  .background-tabbar {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
 }
