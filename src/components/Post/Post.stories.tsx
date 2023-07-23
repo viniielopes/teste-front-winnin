@@ -18,6 +18,8 @@ type Story = StoryObj<typeof meta>;
 
 export const CompletePost: Story = {
   args: {
+    postURL:
+      "https://www.reddit.com/r/reactjs/comments/156m504/the_nextjs_13_app_router_has_been_a_frustrating/",
     children: (
       <>
         <PostComponents.Image
