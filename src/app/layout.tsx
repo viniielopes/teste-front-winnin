@@ -3,7 +3,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import Header from "@/components/Header";
-import { Html } from "@/components/Html";
 
 const inter = Mulish({ weight: ["400", "600", "700"], subsets: ["latin"] });
 
