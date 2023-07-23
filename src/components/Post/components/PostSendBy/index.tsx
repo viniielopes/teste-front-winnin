@@ -17,7 +17,11 @@ export const PostSendBy = ({ author, creationDate }: PostSendByProps) => {
         locale: ptBR,
       })}{" "}
       por
-      <span className="text-primary hover:underline" onClick={onClickAuthor}>
+      <span
+        data-testid="author-test"
+        className="text-primary hover:underline"
+        onClick={onClickAuthor}
+      >
         {" "}
         u/{author}
       </span>
