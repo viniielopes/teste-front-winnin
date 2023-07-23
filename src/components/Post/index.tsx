@@ -48,7 +48,7 @@ export const Post = () => {
             {page.children.map((info) => (
               <Fragment key={info.data.created_utc}>
                 <Divider />
-                <PostComponents.Root>
+                <PostComponents.Root postURL={info.data.url}>
                   {info.data.thumbnail !== "self" &&
                     info.data.thumbnail !== "default" && (
                       <PostComponents.Image imageURL={info.data.thumbnail} />

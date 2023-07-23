@@ -18,4 +18,5 @@ interface Data {
   title: string;
   created_utc: number;
   domain: string;
+  url: string;
 }
