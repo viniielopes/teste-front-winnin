@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Teste Front Winnin
 
-## Getting Started
+Neste teste foi proposto listar os posts do subreddit [Reactjs](https://www.reddit.com/r/reactjs/) utilizando a api do reddit, seguindo este prototipo no [Figma](https://www.figma.com/file/PPvIPPITdlgZo9CeGDVezk/DesafioWinnin?type=design&node-id=0-1&mode=design&t=SOsPte5OTo55VcFB-0).
 
-First, run the development server:
+Bibliotecas e tecnologias que utilizei.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+- NextJS
+- App Router
+- TanStack Query (React Query)
+- Zustand
+- React Infinite Scroll
+- TailwindCSS
+- Jest/React Testing library
+- StoryBook
+
+Projeto e Storybook estão na Vercel.
+
+[Projeto](https://teste-front-winnin.vercel.app/)
+
+[Storybook](https://teste-front-winnin-ifti.vercel.app/?path=/docs/components-button--docs)
+
+Para rodar local é apenas necessario clonar o repositorio e seguir os seguintes passos:
+
+Instalar as dependências
+
+```jsx
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Rodar o ambiente de dev do projeto:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```jsx
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Para iniciar o storybook é necessario:
 
-## Learn More
+```jsx
+npm run storybook
+```
 
-To learn more about Next.js, take a look at the following resources:
+Features que foram implementadas:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [x] Testes unitarios
+- [x] Documentação dos components com storybook
+- [x] Projeto rodando na Vercel
+- [x] Dark Mode
+- [x] Infinite Scroll
+- [x] TabBar fixo ao scrollar.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Cobertura com testes unitarios
 
-## Deploy on Vercel
+![Untitled](https://github.com/viniielopes/teste-front-winnin/assets/26721938/2bebb82f-f330-4f49-ae2d-ee9cc7c040d4)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Não foi possivel utilizar o mock service worker para mockar retornos da api tem essa [Issue](https://github.com/mswjs/msw/issues/1644) aberta e parece que não ta 100% para o NextJS 13.
