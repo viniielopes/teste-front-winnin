@@ -49,10 +49,9 @@ export const Post = () => {
               <Fragment key={info.data.created_utc}>
                 <Divider />
                 <PostComponents.Root postURL={info.data.url}>
-                  {info.data.thumbnail !== "self" &&
-                    info.data.thumbnail !== "default" && (
-                      <PostComponents.Image imageURL={info.data.thumbnail} />
-                    )}
+                  {info.data.thumbnail.includes("https://") && (
+                    <PostComponents.Image imageURL={info.data.thumbnail} />
+                  )}
                   <div>
                     <PostComponents.Title title={info.data.title} />
                     <PostComponents.SendBy
