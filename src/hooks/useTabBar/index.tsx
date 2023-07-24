@@ -9,6 +9,7 @@ export const useTabBar = () => {
 
   const onClickButton = (text: TopicsType) => {
     setActive(text);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return {
     onClickTab: onClickButton,
