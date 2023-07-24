@@ -2,7 +2,7 @@ import TanStackProvider from "@/api/tanstack-query";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
-import Header from "@/components/Header";
+import Providers from "./Providers";
 
 const inter = Mulish({ weight: ["400", "600", "700"], subsets: ["latin"] });
 
@@ -20,8 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background" data-mode="light">
       <body className={inter.className}>
-        <Header />
-        <TanStackProvider>{children}</TanStackProvider>
+        <Providers>
+          <TanStackProvider>{children}</TanStackProvider>
+        </Providers>
       </body>
     </html>
   );
