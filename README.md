@@ -47,6 +47,7 @@ Features que foram implementadas:
 - [x] Dark Mode
 - [x] Infinite Scroll
 - [x] TabBar fixo ao scrollar.
+- [x] Internacionalização.
 
 Cobertura com testes unitarios
 
