@@ -10,7 +10,7 @@ export default function Home() {
       <Header />
       <ToastContainer></ToastContainer>
       <TabBar />
-      <div className="mx-14 mb-9">
+      <div className="mx-5 mb-9 sm:mx-14 lg:mx-14 ">
         <Post />
       </div>
     </main>
