@@ -1,23 +1,44 @@
 "use client";
 
 import { Button } from "../Button";
-import { Topics } from "@/stores/useActiveTopic/types";
+import { TopicsType } from "@/stores/useActiveTopic/types";
 import { useTabBar } from "@/hooks/useTabBar";
+import { useTranslations } from "next-intl";
+
+export type TabBarButtons = {
+  text: string;
+  topic: TopicsType;
+};
 
 export const TabBar = () => {
-  const buttonsText: Topics[] = ["Hot", "News", "Rising"];
+  const t = useTranslations("TabBar");
+
+  const buttonsText: TabBarButtons[] = [
+    {
+      text: t("hot"),
+      topic: "hot",
+    },
+    {
+      text: t("news"),
+      topic: "new",
+    },
+    {
+      text: t("rising"),
+      topic: "rising",
+    },
+  ];
 
   const { tabActive, onClickTab } = useTabBar();
 
   return (
     <div className="background-tabbar sticky top-0 z-50 flex justify-center bg-opacity-80 py-5">
-      {buttonsText.map((text) => (
+      {buttonsText.map((infos) => (
         <Button
-          key={text}
-          active={tabActive === text}
-          onClick={() => onClickTab(text)}
+          key={infos.topic}
+          active={tabActive === infos.topic}
+          onClick={() => onClickTab(infos.topic)}
         >
-          {text}
+          {infos.text}
         </Button>
       ))}
     </div>

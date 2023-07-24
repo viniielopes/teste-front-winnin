@@ -3,12 +3,12 @@ import { useActiveTopicStore } from "@/stores/useActiveTopic";
 import { toast } from "react-toastify";
 
 export const usePost = () => {
-  const topicType = useActiveTopicStore((state) => state.topicType);
+  const topic = useActiveTopicStore((state) => state.topic);
 
   const { data, isLoading, isError, fetchNextPage, hasNextPage } =
     useGetSubredditInfo(
       {
-        type: topicType,
+        type: topic,
       },
       {
         onError: () => {
@@ -23,7 +23,7 @@ export const usePost = () => {
             theme: "light",
           });
         },
-      },
+      }
     );
 
   const fetchMoreData = () => {

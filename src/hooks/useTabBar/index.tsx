@@ -1,5 +1,5 @@
-import { Topics } from "@/stores/useActiveTopic/types";
 import { useActiveTopicStore } from "@/stores/useActiveTopic";
+import { TopicsType } from "@/stores/useActiveTopic/types";
 
 export const useTabBar = () => {
   const [topic, setActive] = useActiveTopicStore((state) => [
@@ -7,7 +7,7 @@ export const useTabBar = () => {
     state.setTopic,
   ]);
 
-  const onClickButton = (text: Topics) => {
+  const onClickButton = (text: TopicsType) => {
     setActive(text);
   };
   return {

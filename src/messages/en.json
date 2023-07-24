@@ -1,0 +1,14 @@
+{
+  "RootLayout": {
+    "title": "Winnin FrontEnd Test"
+  },
+  "TabBar": {
+    "hot": "Hot",
+    "news": "News",
+    "rising": "Rising"
+  },
+  "SendBy": {
+    "sent": "Sent",
+    "by": "by"
+  }
+}

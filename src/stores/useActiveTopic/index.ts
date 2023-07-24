@@ -1,14 +1,8 @@
 import { create } from "zustand";
-import { ActiveTopicState, Topics, TopicsType } from "./types";
-
-const topicTypeList: { [key in Topics]: TopicsType } = {
-  Hot: "hot",
-  News: "new",
-  Rising: "rising",
-};
+import { ActiveTopicState } from "./types";
 
 export const useActiveTopicStore = create<ActiveTopicState>()((set) => ({
-  topic: "Hot",
+  topic: "hot",
   topicType: "hot",
-  setTopic: (topic) => set(() => ({ topic, topicType: topicTypeList[topic] })),
+  setTopic: (topic) => set(() => ({ topic })),
 }));

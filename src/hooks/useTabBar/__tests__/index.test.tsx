@@ -6,9 +6,9 @@ describe("useTabBar", () => {
     const { result } = renderHook(() => useTabBar());
 
     act(() => {
-      result.current.onClickTab("Rising");
+      result.current.onClickTab("rising");
     });
 
-    expect(result.current.tabActive).toBe("Rising");
+    expect(result.current.tabActive).toBe("rising");
   });
 });

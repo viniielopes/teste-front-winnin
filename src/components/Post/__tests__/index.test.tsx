@@ -1,18 +1,11 @@
-import { fireEvent, render, screen } from "@testing-library/react";
 import { Post } from "@/components/Post";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { usePost } from "../../../hooks/usePost";
-import { ReactNode } from "react";
 import { mockData, mockDataDefault, mockShowImage } from "./mocks";
+import { render, screen, fireEvent } from "@/test-utils";
 
 jest.mock("../../../hooks/usePost");
 
 const mockUsePost = usePost as jest.MockedFunction<typeof usePost>;
-
-const queryClient = new QueryClient();
-const wrapper = ({ children }: { children: ReactNode }) => (
-  <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-);
 
 beforeEach(() => jest.clearAllMocks());
 
@@ -28,7 +21,7 @@ describe("Post", () => {
       data: mockShowImage,
     }));
 
-    render(<Post></Post>, { wrapper });
+    render(<Post></Post>);
     fireEvent.scroll(window, { target: { scrollY: 300 } });
 
     expect(mockFetchMoreData).toBeCalled();
@@ -45,7 +38,7 @@ describe("Post", () => {
       data: mockShowImage,
     }));
 
-    render(<Post></Post>, { wrapper });
+    render(<Post></Post>);
     fireEvent.scroll(window, { target: { scrollY: 300 } });
 
     expect(mockFetchMoreData).not.toBeCalled();
@@ -60,7 +53,7 @@ describe("Post", () => {
       data: mockShowImage,
     }));
 
-    render(<Post></Post>, { wrapper });
+    render(<Post></Post>);
     fireEvent.scroll(window, { target: { scrollY: 300 } });
 
     const post_title = screen.getByText("Titulo teste");
@@ -80,7 +73,7 @@ describe("Post", () => {
       data: mockDataDefault,
     }));
 
-    render(<Post></Post>, { wrapper });
+    render(<Post></Post>);
 
     const post_title = screen.getByText("Titulo teste");
 
@@ -99,7 +92,7 @@ describe("Post", () => {
       data: mockData,
     }));
 
-    render(<Post></Post>, { wrapper });
+    render(<Post></Post>);
 
     const post_title = screen.getByText("Titulo teste");
 
@@ -118,10 +111,10 @@ describe("Post", () => {
       data: undefined,
     }));
 
-    render(<Post></Post>, { wrapper });
+    render(<Post></Post>);
 
     const empty_message = screen.getByText(
-      "Parece que não foi encontrado posts.",
+      "Parece que não foi encontrado posts."
     );
 
     expect(empty_message).toBeInTheDocument();
@@ -136,7 +129,7 @@ describe("Post", () => {
       data: undefined,
     }));
 
-    render(<Post></Post>, { wrapper });
+    render(<Post></Post>);
 
     const loading = screen.getAllByTestId("loading-test");
 
@@ -152,10 +145,10 @@ describe("Post", () => {
       data: undefined,
     }));
 
-    render(<Post></Post>, { wrapper });
+    render(<Post></Post>);
 
     const message = screen.getByText(
-      "Aconteceu um erro, tente novamente em alguns minutos...",
+      "Aconteceu um erro, tente novamente em alguns minutos..."
     );
     expect(message).toBeInTheDocument();
   });

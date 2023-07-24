@@ -1,18 +1,6 @@
-import Header from "@/components/Header";
-import { Post } from "@/components/Post";
-import { TabBar } from "@/components/TabBar";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
+import { redirect } from 'next/navigation';
 
-export default function Home() {
-  return (
-    <main>
-      <Header />
-      <ToastContainer></ToastContainer>
-      <TabBar />
-      <div className="mx-14 mb-9">
-        <Post />
-      </div>
-    </main>
-  );
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+  redirect('/pt');
 }
